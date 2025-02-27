@@ -108,9 +108,9 @@ const signIn = (e) => {
             window.location.pathname = '/codeCraft'; // User Dashboard
 
             Swal.fire({
-              title: "❌ Access Denied!",
-              text: "You are not an admin.",
-              icon: "error",
+              title: "✅Login Successful!",
+              text: "Welcome to ", email,
+              icon: "success",
               confirmButtonText: "OK",
           });
 
@@ -164,7 +164,7 @@ onAuthStateChanged(auth, async (user) => {
         
         const auth = getAuth();
         signOut(auth).then(() => {
-          window.location.pathname = '/codeCraft/asset/html/login.html';
+          window.location.pathname = '/login.html';
         }).catch((error) => {
           console.error('Sign out error:', error);
         });

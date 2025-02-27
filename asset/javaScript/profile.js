@@ -184,7 +184,7 @@ const renderCreatedRecipes = (recipes) => {
                 <p style="color: #777; padding-left: 10px;">${recipe?.ingredients}</p>
             </div>
             <div style="text-align: center; margin-bottom: 15px;">
-        <img src="${recipe?.imageUrl || 'default-image.jpg'}" 
+        <img src="${recipe?.imageUrl || 'https://bijnicollege.ac.in/wp-content/uploads/2021/06/default-1.png'}" 
              alt="Recipe Image" 
              style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
         </div>

@@ -4,6 +4,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
 .cursor,
 .cursor-trail {
     position: fixed;
@@ -25,7 +26,7 @@
 .cursor-trail {
     width: 30px;
     height: 30px;
-    background:  #fa6901;
+    background: #fa6901;
     border-radius: 50%;
     filter: blur(8px);
 }
@@ -234,7 +235,7 @@ nav a:hover {
 .hero-section {
     width: 100%;
     height: 100vh;
-    background-image: url(/images/spark\ img.jpg);
+    background-image: url(https://png.pngtree.com/background/20220731/original/pngtree-fire-spark-background-full-hd-picture-image_1913968.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -656,7 +657,8 @@ nav a:hover {
 
 
 }
-@media(min-width:1326px){
+
+@media(min-width:1326px) {
     .hero-sec-2-pizza {
         width: 100%;
         height: 100%;
@@ -666,6 +668,7 @@ nav a:hover {
         padding-top: 7%;
         padding-bottom: 5%;
     }
+
     .image #pizza-platter {
         margin-top: 20px;
         width: 650px;
@@ -1187,7 +1190,7 @@ section {
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
     cursor: pointer;
     position: relative;
-    color:rgba(122, 122, 122, 0.904);
+    color: rgba(122, 122, 122, 0.904);
 }
 
 .slide:hover {
@@ -1402,6 +1405,7 @@ section {
         justify-content: space-evenly;
     }
 }
+
 @media (max-width: 768px) {
     .orange-info-box {
         flex-direction: column;
@@ -1432,9 +1436,11 @@ section {
     background-color: black;
     color: white;
 }
-.custom-footer-section h3{
+
+.custom-footer-section h3 {
     color: white;
 }
+
 .custom-info-box {
     margin: 0 auto;
     width: 80%;
@@ -1515,9 +1521,11 @@ section {
     text-align: center;
     transition: all 0.3s ease-in-out;
 }
-.social-icon i{
+
+.social-icon i {
     font-size: 27px;
 }
+
 .social-icon i:hover {
     transition: all .5s ease-in-out;
     transform: scale(1.2);
@@ -1525,7 +1533,7 @@ section {
 }
 
 .facebook i:hover {
-color: #3b5998;
+    color: #3b5998;
 }
 
 .twitter i:hover {
@@ -1537,12 +1545,12 @@ color: #3b5998;
 }
 
 .linkedin i:hover {
-color: #0077b5;
+    color: #0077b5;
 }
 
 .custom-footer-bottom {
     text-align: center;
-    background:red;
+    background: red;
     padding: 10px;
     font-size: 14px;
     color: white;

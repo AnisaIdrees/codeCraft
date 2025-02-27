@@ -66,13 +66,13 @@ const register = async (e) => {
       isActive: true
       // userName
     });
-    window.location.pathname = '/index.html';
+    window.location.pathname = '/codeCraft/';
     console.log('user addded to database');
   } catch (error) {
     console.error("Signup Error:", error.code, error.message);
     alert(error.message);
     if (userCredential?.user) {
-      window.location.pathname = '/Source/MainHomePage.html';
+      window.location.pathname = '/codeCraft';
     }
   }
 };
@@ -95,7 +95,7 @@ const signIn = (e) => {
           // alert('Login Successfull')
 
           if (user.email==='admin12@gmail.com') {
-            window.location.pathname = '/asset/html/adminDashboard.html'; // Admin Dashboard
+            window.location.pathname = '/codeCraft/asset/html/adminDashboard.html'; // Admin Dashboard
 
             Swal.fire({
               title: "✅Login Successful!",
@@ -164,7 +164,7 @@ onAuthStateChanged(auth, async (user) => {
         
         const auth = getAuth();
         signOut(auth).then(() => {
-          window.location.pathname = '/asset/html/login.html';
+          window.location.pathname = '/codeCraft/asset/html/login.html';
         }).catch((error) => {
           console.error('Sign out error:', error);
         });
@@ -185,7 +185,7 @@ provider.setCustomParameters({ prompt: "select_account" });
 const google = () => {
   const result = signInWithPopup(auth, provider)
     .then((result) => {
-      window.location.href = "/index.html"
+      window.location.href = "/codeCraft/"
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;

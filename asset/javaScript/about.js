@@ -1,5 +1,5 @@
 //  cursor
-const cursor = document.querySelector(".cursor");
+const cursorPoint = document.querySelector(".cursor");
 const cursorTrail = document.querySelector(".cursor-trail");
 
 
@@ -7,7 +7,7 @@ const cursorTrail = document.querySelector(".cursor-trail");
 
 // Smooth follow effect using GSAP
 document.addEventListener("mousemove", (e) => {
-  gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1, ease: "power2.out" });
+  gsap.to(cursorPoint, { x: e.clientX, y: e.clientY, duration: 0.1, ease: "power2.out" });
   gsap.to(cursorTrail, { x: e.clientX, y: e.clientY, duration: 0.3, ease: "power3.out" });
 });
 
@@ -15,7 +15,7 @@ document.addEventListener("mousemove", (e) => {
 
 // Click Animation
 document.addEventListener("click", () => {
-  gsap.to(cursor, { scale: 1.5, duration: 0.1, ease: "power2.out", yoyo: true, repeat: 1 });
+  gsap.to(cursorPoint, { scale: 1.5, duration: 0.1, ease: "power2.out", yoyo: true, repeat: 1 });
   gsap.to(cursorTrail, { scale: 2, duration: 0.3, opacity: 0, ease: "power2.out", yoyo: true, repeat: 1 });
 });
 

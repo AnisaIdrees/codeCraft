@@ -336,7 +336,7 @@ nav a:hover {
 
     .hero-section {
         height: 110vh;
-        background-image: url();
+        background-image: url(/codeCraft/images/heroimage.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;

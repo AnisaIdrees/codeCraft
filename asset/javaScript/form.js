@@ -105,7 +105,7 @@ const signIn = (e) => {
           });
 
           } else {
-            window.location.pathname = '/index.html'; // User Dashboard
+            window.location.pathname = '/codeCraft'; // User Dashboard
 
             Swal.fire({
               title: "❌ Access Denied!",

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- remix cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css"
+        integrity="sha512-6p+GTq7fjTHD/sdFPWHaFoALKeWOU9f9MPBoPnvJEWBkGS4PKVVbCpMps6IXnTiXghFbxlgDE8QRHc3MU91lJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- animations cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- custom css -->
+
+    <link rel="stylesheet" href="/asset/style/recipeStyle.css">
+    <!-- <link rel="stylesheet" href="../style/home.css"> -->
+
+
+</head>
+<style>
+    
+header {
+    min-height: 60px;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    min-height: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.logo {
+    float: left;
+}
+
+.logo .logo-img {
+    width: 96px;
+    align-items: center;
+    cursor: pointer;
+}
+
+nav ul {
+    flex-grow: 0.8;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 20px 1em;
+    transition: background-color .5s linear;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+nav a:hover {
+    color: #eb0029;
+    transition: all .5s linear;
+}
+
+.login-sec .login-btn,
+.profile-btn {
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: #eb0029;
+    color: white;
+    text-transform: capitalize;
+    border: none;
+    margin-right: 7px;
+    gap: 0;
+}
+
+
+.login-sec .login-btn:hover {
+    border: 1px solid #eb0029;
+    background-color: white;
+    color: #eb0029;
+    transition: .5s linear;
+}
+
+.login-sec .profile-btn:hover {
+    border: 1px solid #eb0029;
+    background-color: white;
+    color: #eb0029;
+    transition: .5s linear;
+}
+
+.nav-container i {
+    color: white;
+    float: right;
+    font-size: 27px;
+    font-weight: 500;
+    display: none;
+    margin-right: 10px;
+}
+
+@media(max-width:1200px) {
+    nav ul {
+        margin-top: 16px;
+        position: absolute;
+        top: 80px;
+        left: 80;
+        right: 0px;
+        height: 900px;
+        width: 400px;
+        text-align: left;
+        flex-direction: column;
+        background-color: #eb0029;
+        border-left: 4px solid black;
+        overflow: hidden;
+        max-height: 0;
+        cursor: pointer;
+    }
+
+    .nav-container i {
+        display: block;
+    }
+
+    nav a {
+        color: white;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    nav a:hover {
+        color: black;
+    }
+
+    nav ul li {
+        width: 90%;
+        padding: 4px 4px;
+    }
+
+    nav ul:hover {
+        background-color: #eb0029;
+        transition: all .5s linear;
+        color: white;
+        border-left: 4px solid black;
+
+    }
+}
+
+@media(max-width:415px) {
+    nav ul {
+        margin-top: 16px;
+        position: absolute;
+        top: 80px;
+        left: 80;
+        right: 0px;
+        height: 400px;
+        width: 250px;
+        text-align: left;
+        flex-direction: column;
+        background-color: #eb0029;
+        border-left: 4px solid black;
+    }
+
+    nav a {
+        font-size: 15px;
+        padding: 2px 5px;
+
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+    .login-sec .login-btn,
+    .profile-btn {
+        padding: 8px 13px;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        background-color: #eb0029;
+        color: white;
+        text-transform: capitalize;
+        border: none;
+        /* margin-left: 4px; */
+    }
+}
+
+@media (max-width: 1400px) {
+    .container-xxl {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+</style>
+<body>
+      <!-- cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-trail"></div>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/images/food_logo-removebg-preview.png" alt="" class="logo-img">
+            </div>
+            <nav>
+                <ul id="menuList">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/asset/html/about.html">About us</a></li>
+                    <li><a href="/asset/html/blog.html">Blogs</a></li>
+                    <li><a href="/asset/html/testimonial.html">Testimonials</a></li>
+                    <li><a href="/asset/html/recipe.html">Recipe</a></li>
+                    <li><a href="/asset/html/contact.html">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="login-sec">
+
+                <a href="./logIn.html" class="login-sign-btn"><button id="userLogin"
+                        class="login-btn">login</button></a>
+
+                <a href="./profilePage.html" class="login-sign-btn"><button id="profile"
+                        class="profile-btn">proflie</button></a>
+
+            </div>
+            <i class="ri-menu-3-line" id="menuIcon"></i>
+        </div>
+    </header>
+    <!-- slider -->
+    <section class="intro">
+        <div class="left">
+            <div class="animate__animated animate__backInDown">
+                <span>Discover Flavors Around the World</span>
+                <h1>Find Your Next Favorite <i style="color:#fc791a ; font-weight: 900;">Recipe</i> Here</h1>
+                <p>Unleash your inner chef with recipes crafted to perfection. Whether you're craving savory, sweet, or
+                    spicy, our collection has everything to satisfy your taste buds.</p>
+                <i class="fa-duotone fa-solid fa-chevron-down animated-icon"></i>
+            </div>
+        </div>
+        <div class="slider">
+            <ul>
+                <li
+                    style="background-image:url(https://www.kitchenaid.com/is/image/content/dam/business-unit/kitchenaid/en-us/marketing-content/site-assets/page-content/pinch-of-help/35-stand-mixer-recipes/mixer-recipes-11.jpg?fit=constrain&fmt=png-alpha&wid=2875); opacity: 0.8;">
+                    <div class="center-y">
+                        <h3>Delicious Homemade Bakes</h3>
+                        <a href="#starters">Explore Recipe</a>
+                    </div>
+                </li>
+                <li
+                    style="background-image:url(https://www.sargento.com/assets/Uploads/Recipe/Image/Website_Waygu_Sliders.jpg); opacity: 0.8;">
+                    <div class="center-y">
+                        <h3>Juicy Wagyu Sliders</h3>
+                        <a href="#starters">Explore Recipe</a>
+                    </div>
+                </li>
+                <li
+                    style="background-image:url(https://images.squarespace-cdn.com/content/v1/5f78dc08fbb09c239c71f3c3/1623343000957-V2OVFJWLCHTPS02BJY5T/TheWishDishProject_BBQ_Spam_Sliders_01_web_horizontal.jpg); opacity: 0.8;">
+                    <div class="center-y">
+                        <h3>Smoky BBQ Sliders</h3>
+                        <a href="#starters">Explore Recipe</a>
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <nav>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </nav>
+            </ul>
+        </div>
+    </section>
+    <!-- search -->
+    <div id="search" class="input-group w-75 m-auto mt-5 shadow-lg rounded-4">
+        <select id="searchType" class="form-select rounded-start" style="max-width: 150px;">
+            <option value="name">By Name</option>
+            <option value="category">By Category</option>
+        </select>
+        <input id="searchField" type="text" class="form-control" placeholder="Search...">
+        <button class="btn text-white" style="background-color: #fc791a;" type="button" id="searchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+
+
+    <!-- card section and right side section-->
+    <div class="container mt-5">
+        <div class="allCards row g-5">
+            <div class="col-lg-8 ">
+                <h2 id="starters" class="resTitle text-center" data-course="appetizer"></h2>
+                <div class="starter"></div>
+                <a class="moreRec d-md-flex justify-content-end " href="./starters.html">Get More Recipes</a>
+                <hr class="my-5" style="width: 95%;">
+                <h2 class="resTitle text-center " data-course="lunch"></h2>
+                <div class="lunch"></div>
+                <a class="moreRec d-md-flex justify-content-end " href="./lunch.html">Get More Recipes</a>
+                <hr class="my-5" style="width: 95%;">
+                <h2 class="resTitle text-center " data-course="smoothies"></h2>
+                <div class="drinksSection"></div>
+                <a class="moreRec d-md-flex justify-content-end " href="./smoothies.html">Get More Recipes</a>
+                <hr class="my-5" style="width: 95%;">
+                <h2 class="resTitle text-center" data-course="pizza"></h2>
+                <div class="pizzaSection"></div>
+                <a class="moreRec d-md-flex justify-content-end " href="./pizza.html">Get More Recipes</a>
+                <hr class="my-5" style="width: 95%;">
+                <h2 class="resTitle text-center" data-course="salad"></h2>
+                <div class="salad"></div>
+                <a class="moreRec d-md-flex justify-content-end " href="./salad.html">Get More Recipes</a>
+                <hr class="my-5" style="width: 95%;">
+                <h2 class="resTitle text-center" data-course="dinner"></h2>
+                <div class="dinner"></div>
+                <a class="moreRec d-md-flex justify-content-end " href="./dinner.html">Get More Recipes</a>
+                <hr class="my-5" style="width: 95%;">
+            </div>
+            <div class="col-lg-4 ">
+                <div class="sec">
+                    <img class="secImg" src="/assets/logo bgrmv.png" alt="">
+                    <h3>Food Fusion</h3>
+                    <p class="mt-4 p-3">
+                        Hello! This is Team, the creator of Food Fusion. Cooking is a cherished tradition
+                        passed down in my way, deeply rooted in love and shared experiences.<br><br>
+                        My website showcases tried-and-true recipes that promise to turn your cooking into memorable
+                        moments.
+                    </p>
+                    <a href="" style="color: #fc791a;">More about us</a>
+                </div>
+                <div class="newsLetter mt-5">
+                    <div class="opac">
+                        <div class="myNewsLetter">
+                            <div class="image-wrapper">
+                                <img src="/assets/newsletter.jpg" alt="Newsletter" class="background-img">
+                                <div class="overlay-text">
+                                    <h4>Join Our News Letter</h4>
+                                </div>
+                            </div>
+                            <div>
+                                <form action="">
+                                    <input class="newsField" type="text" placeholder="Name"><br>
+                                    <input class="newsField" type="text" placeholder="Email Address">
+                                </form>
+                                <button class="newsLetterBtn">SEND IT OUR WAY</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="max-width: 330px;" class="mt-5">
+                <div class="socialLinks text-center mt-5 my-5">
+                    <h4>Follow Us:</h4>
+                    <div class=" col links g-5 my-5">
+                        <i id="socialIcons" class="fa-brands fa-facebook"></i>
+                        <i id="socialIcons" class="fa-brands fa-instagram"></i>
+                        <i id="socialIcons" class="fa-regular fa-envelope"></i>
+                        <i id="socialIcons" class="fa-brands fa-bluesky"></i>
+                        <i id="socialIcons" class="fa-brands fa-twitter"></i>
+                        <i id="socialIcons" class="fa-brands fa-google-plus-g"></i>
+                        <i id="socialIcons" class="fa-brands fa-threads"></i>
+                        <i id="socialIcons" class="fa-brands fa-pinterest"></i>
+                    </div>
+                </div>
+                <hr style="max-width: 330px;" class="mt-5">
+                <div class="demanding my-5 ">
+                    <h4 class="text-center">Our Most Demainding Recipes:</h4>
+                    <div class="demanding">
+                        <div class="demCard mt-5">
+                            <img src="/assets/demnding1.jpg" alt="">
+                            <a href="">
+                                <h4 class="mt-3">Futuccine Alfredo</h4>
+                            </a>
+                        </div>
+                        <div class="demCard mt-5">
+                            <img src="/assets/1e08c41c-6522-4dbc-8bf0-cd2a74b80c97.jfif" alt="">
+                            <a href="">
+                                <h4 class="mt-3">Cheesee Roll</h4>
+                            </a>
+                        </div>
+                        <div class="demCard mt-5">
+                            <img src="/assets/des1.jpg" alt="">
+                            <a href="">
+                                <h4 class="mt-3">Saucy Smoothie</h4>
+                            </a>
+                        </div>
+                        <div class="demCard mt-5">
+                            <img src="/assets/bakery.png" alt="">
+                            <a href="">
+                                <h4 class="mt-3">Cheese Cake</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- footer ////  -->
+    <div style="background-color: black;" class="container-xxl footer">
+        <div class="d-flex justify-content-around pt-5 orange-info-box">
+            <div class="location-box">
+                <i class="ri-map-pin-2-fill"></i>
+                <h6 style="color: white;padding-top: 15px;">
+                    address <br>
+                    4648 Rocky Road Philadelphia</h6>
+            </div>
+            <div class="email-box">
+                <i class="ri-mail-fill"></i>
+                <h6 style="color: white;padding-top: 15px;">
+                    send email <br>
+                    info@exmple.com
+                </h6>
+            </div>
+            <div class="phone-box">
+                <i class="ri-phone-fill"></i>
+                <h6 style="color: white; padding-top: 15px;">
+                    call emergency <br>
+                    +88 0123 654 99
+                </h6>
+            </div>
+        </div>
+
+
+        <!-- Footer Content -->
+        <div class="custom-footer-container">
+            <div class="custom-footer-section about">
+                <h3>About Us</h3>
+                <p>We provide high-quality services to enhance your experience. Stay connected with us!</p>
+                <div class="custom-footer-section social">
+                    <div class="custom-social-icons">
+                        <a href="#" class="social-icon facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-icon twitter"><i class="ri-twitter-fill"></i></a>
+                        <a href="#" class="social-icon instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" class="social-icon linkedin"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-footer-section quick-links">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Blog</a>
+            </div>
+
+            <div class="custom-footer-section menu">
+                <h3>Our Menu</h3>
+                <a href="#">Breakfast</a>
+                <a href="#">Lunch</a>
+                <a href="#">Dinner</a>
+                <a href="#">Desserts</a>
+            </div>
+
+            <div class="custom-footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: contact@yourcompany.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Location: 123 Street, City</p>
+            </div>
+        </div>
+        <!-- Back to Top Button -->
+        <div class="container-xxl">
+            <button id="customBackToTop"><i class="ri-arrow-up-line"></i></button>
+        </div>
+    </div>
+    </div>
+    <div class="custom-footer-bottom container-xxl">
+        &copy; 2025 YourCompany. All Rights Reserved.
+    </div>
+    <!-- footer closee////  -->
+
+
+    <!-- main web container close -->
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!--swiper cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- gsap cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- gsap scrolltrigger cdn-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/asset/javaScript/Libraries.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+        <!-- aqsa firebase  -->
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <script src="/asset/javaScript/form.js" type="module"></script>
+    <script type="module" src="/asset/javaScript/index.js"></script>
+        <!-- aqsa firebase  -->
+
+</body>
+
+</html>

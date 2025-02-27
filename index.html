@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>recipe website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Swiper  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- remix cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.css"
+    integrity="sha512-6p+GTq7fjTHD/sdFPWHaFoALKeWOU9f9MPBoPnvJEWBkGS4PKVVbCpMps6IXnTiXghFbxlgDE8QRHc3MU91lJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./asset/style/home.css">
+</head>
+
+<body>
+  <!-- cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-trail"></div>
+  <!-- main web container -->
+  <div class="container-xxl ">
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <img src="./images/food_logo-removebg-preview.png" alt="" class="logo-img">
+        </div>
+        <nav>
+          <ul id="menuList">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./asset/html/about.html">About us</a></li>
+            <li><a href="./asset/html/blog.html">Blogs</a></li>
+            <li><a href="./asset/html/testimonial.html">Testimonials</a></li>
+            <li><a href="./asset/html/recipe.html">Recipe</a></li>
+            <li><a href="./asset/html/contact.html">Contact us</a></li>
+          </ul>
+        </nav>
+        <div class="login-sec">
+
+          <a href="./asset/html/logIn.html" class="login-sign-btn"><button class="login-btn">login</button></a>
+
+          <a href="/asset/html/profilePage.html" class="login-sign-btn"><button class="profile-btn">proflie</button></a>
+
+        </div>
+        <i class="ri-menu-3-line" id="menuIcon"></i>
+      </div>
+    </header>
+    <!--///////////// hero section ////////////////-->
+    <div class="container-xxl hero-section">
+
+      <div class="child">
+        <div class="text">
+          <div class="h3">Welcome Fresheat</div>
+          <p class="h1 ">enjoy our chicken burger fast food</p>
+        </div>
+
+        <div class="image">
+          <img src="/images/red_chilli-removebg-preview.png" id="red-chilli">
+          <img src="/images/red_chilli-removebg-preview.png" id="red-chilli2" alt="">
+          <img src="./images/burgur_image-removebg-preview.png" id="burger">
+        </div>
+      </div>
+      <img src="/images/single_tomato-removebg-preview.png" id="single-tomato-slice">
+      <img src="/images/single_tomato-removebg-preview.png" id="tomato">
+    </div>
+    <!-- hero section close-->
+    <!-- hero sec 2 -->
+    <div class="container-xxl hero-sec-2-pizza "style="overflow-x:hidden;">
+      <div class="child2">
+
+        <div class="image">
+          <img src="/images/pizza_plate-removebg-preview.png" id="pizza-platter">
+        </div>
+
+        <div class="text sec2-texting">
+          <p class=" heading fs-5">Good Food <span>Great Mood!</span></p>
+          <p class="p">Enjoy the perfect blend of taste and freshness in every bite <br>
+            Treat yourself today and make your mood as
+            great as your <br> meal.Let us bring joy to your table, one delicious bite at a time</p>
+          <button id="order-now-btn">Orderd Now</button>
+        </div>
+      </div>
+    </div>
+    <!-- hero sec 2 close-->
+
+    <!-- card-slider section ---------------// -->
+    <div class="home-card-slider-section container-xxl">
+
+      <p class="text-center" style="font-size :20px; font-weight :700; color:#fc710d;"> Best Food <i
+          class="ri-restaurant-line"></i></p>
+      <p class="text-center" style="font-size :40px; font-weight :900; color:black;">Popular Food Items</p>
+      <!-- ///// cardss -->
+      <div class="home-main-slider-container mt-5">
+
+        <!-- swiper card slider -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+
+              <div class="best-food-card card" style="width: 16rem; border-radius: 28px;">
+                <div class="card-img-div mx-auto p-1 mt-3" style="position: relative; width: 150px; height: 150px;">
+                  <div class="dashed-border"></div>
+                  <img
+                    src="/images/pizzaa.jpg"
+                    class="card-img-top mx-auto"
+                    style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Chicken Pizza</h5>
+                  <p class="card-text text-center" style="color:#5c6574;">The Registration Fee</p>
+                  <p class="card-text text-center fw-bold" style="color: #eb0029;">$110.2</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+
+              <div class="best-food-card card" style="width: 16rem; border-radius: 28px;">
+                <div class="card-img-div mx-auto p-1 mt-3" style="position: relative; width: 150px; height: 150px;">
+                  <div class="dashed-border"></div>
+                  <img src="/images/annda prattha.jpg" class="card-img-top mx-auto"
+                    style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Andda Pratha</h5>
+                  <p class="card-text text-center" style="color:#5c6574;">The Registration Fee</p>
+                  <p class="card-text text-center fw-bold" style="color: #eb0029;">$10.2</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+
+              <div class="best-food-card card" style="width: 16rem; border-radius: 28px;">
+                <div class="card-img-div mx-auto p-1 mt-3" style="position: relative; width: 150px; height: 150px;">
+                  <div class="dashed-border"></div>
+                  <img src="/images/chicken kabab grilled.jpg" class="card-img-top mx-auto"
+                    style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Chicken Kabab </h5>
+                  <p class="card-text text-center" style="color:#5c6574;">The Registration Fee</p>
+                  <p class="card-text text-center fw-bold" style="color: #eb0029;">$290.2</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="best-food-card card" style="width: 16rem; border-radius: 28px;">
+                <div class="card-img-div mx-auto p-1 mt-3" style="position: relative; width: 150px; height: 150px;">
+                  <div class="dashed-border"></div>
+                  <img src="/images/lazanya.jpg" class="card-img-top mx-auto"
+                    style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Lazanya</h5>
+                  <p class="card-text text-center" style="color:#5c6574;">The Registration Fee</p>
+                  <p class="card-text text-center fw-bold" style="color: #eb0029;">$170.20</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="best-food-card card" style="width: 16rem; border-radius: 28px;">
+                <div class="card-img-div mx-auto p-1 mt-3" style="position: relative; width: 150px; height: 150px;">
+                  <div class="dashed-border"></div>
+                  <img src="/images/special prattha roll.jpg" class="card-img-top mx-auto"
+                    style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Prattha Roll</h5>
+                  <p class="card-text text-center" style="color:#5c6574;">The Registration Fee</p>
+                  <p class="card-text text-center fw-bold" style="color: #eb0029;">$110.2</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="best-food-card card" style="width: 15rem; border-radius: 28px;">
+                <div class="card-img-div mx-auto p-1 mt-3" style="position: relative; width: 150px; height: 150px;">
+                  <div class="dashed-border"></div>
+                  <img src="/images/pasta.jpg" class="card-img-top mx-auto"
+                    style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Pasta</h5>
+                  <p class="card-text text-center" style="color:#5c6574;">The Registration Fee</p>
+                  <p class="card-text text-center fw-bold" style="color: #eb0029;">$100</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="best-food-card card" style="width: 15rem; border-radius: 28px;">
+                <div class="card-img-div mx-auto p-1 mt-3" style="position: relative; width: 150px; height: 150px;">
+                  <div class="dashed-border"></div>
+                  <img src="/images/burgur.jpg" class="card-img-top mx-auto"
+                    style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Burgur</h5>
+                  <p class="card-text text-center" style="color:#5c6574;">The Registration Fee</p>
+                  <p class="card-text text-center fw-bold" style="color: #eb0029;">$110.2</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="best-food-card card" style="width: 15rem; border-radius: 28px;">
+                <div class="card-img-div mx-auto p-1 mt-3" style="position: relative; width: 150px; height: 150px;">
+                  <div class="dashed-border"></div>
+                  <img src="/images/spaghetti-bolognese.webp" class="card-img-top mx-auto"
+                    style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Spaghetti</h5>
+                  <p class="card-text text-center" style="color:#5c6574;">The Registration Fee</p>
+                  <p class="card-text text-center fw-bold" style="color: #eb0029;">$30.2</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-button-next swiper-nav-btn"></div>
+          <div class="swiper-button-prev swiper-nav-btn"></div>
+          <div class="swiper-pagination "></div>
+        </div>
+        <!-- swiper card slider close-->
+      </div>
+    </div>
+    <!-- card-slider section close ---------------// -->
+
+    <!-- offer this week -->
+    <div class="container-xxl pt-5 offer-this-week" style="background-color:#F4F1EA;">
+      <div class="offer-flex-container">
+        <div class="offer-card">
+          <div class="offer">
+            <img src="/images/offer_fries-removebg-preview.png" alt="Pizza"> 50% OFF
+          </div>
+          <p style="font-size: 19px; color: #eb0029;font-weight: bold;">On this Week</p>
+          <h3>SPICY FRIED CHICKEN</h3>
+          <p style="color: #fc710d;font-weight: bold;">limits Time Offer.</p>
+          <button href="#" class="offer-ka-orderBtn" style="--clr: #eb0029">
+            <span class="button__icon-wrapper">
+              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg"
+                width="10">
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"></path>
+              </svg>
+
+              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                class="button__icon-svg button__icon-svg--copy">
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"></path>
+              </svg>
+            </span>
+            Order Now
+          </button>
+
+        </div>
+
+        <div class="offer-card">
+          <div class="offer">
+            <img src="/images/offer_burgur-removebg-preview.png" alt="Burger"> 50% OFF
+          </div>
+          <p style="font-size: 19px; color: #eb0029;font-weight: bold;">On this Week</p>
+          <h3> Spicy Juicy Burger</h3>
+          <p style="color: #fc710d;font-weight: bold;">limits Time Offer</p>
+          <button href="#" class="offer-ka-orderBtn" style="--clr: #eb0029">
+            <span class="button__icon-wrapper">
+              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg"
+                width="10">
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"></path>
+              </svg>
+
+              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                class="button__icon-svg button__icon-svg--copy">
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"></path>
+              </svg>
+            </span>
+            Order Now
+          </button>
+
+        </div>
+
+        <div class="offer-card">
+          <div class="offer">
+            <img src="/images/offer_roll-removebg-preview.png" alt="Pasta"> 50% OFF
+          </div>
+          <p style="font-size: 19px; color: #eb0029;font-weight: bold;">On this Week</p>
+          <h3>SPECIAL CHICKEN ROL</h3>
+          <p style="color: #fc710d; font-weight: bold;">limits Time Offer</p>
+          <!-- From Uiverse.io by Creatlydev -->
+          <button href="#" class="offer-ka-orderBtn" style="--clr: #eb0029">
+            <span class="button__icon-wrapper">
+              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg"
+                width="10">
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"></path>
+              </svg>
+
+              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                class="button__icon-svg button__icon-svg--copy">
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"></path>
+              </svg>
+            </span>
+            Order Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- offer this week closeeeeeeeeeee -->
+  <!-- logo slider -->
+  <div class="swiper-container container-xxl">
+    <div class="swiper logo-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide logo-swiper-slide"><img src="/images/logo5-removebg-preview.png" alt="Logo 5"></div>
+        <div class="swiper-slide logo-swiper-slide"><img src="/images/logo1-removebg-preview.png" alt="Logo 1"></div>
+        <div class="swiper-slide logo-swiper-slide"><img src="/images/logo2-removebg-preview.png" alt="Logo 2"></div>
+        <div class="swiper-slide logo-swiper-slide"><img src="/images/logo3-removebg-preview (1).png" alt="Logo 3">
+        </div>
+        <div class="swiper-slide logo-swiper-slide"><img src="/images/logo4-removebg-preview.png" alt="Logo 4"></div>
+        <div class="swiper-slide logo-swiper-slide"><img src="/images/logo5-removebg-preview.png" alt="Logo 5"></div>
+        <div class="swiper-slide logo-swiper-slide"><img src="/images/logo7-removebg-preview.png" alt="Logo 7"></div>
+        <div class="swiper-slide logo-swiper-slide"><img src="/images/logo6-removebg-preview.png" alt="Logo 6"></div>
+      </div>
+    </div>
+  </div>
+  <!-- logo slider close-->
+  </div>
+  <!-- offer this week closeeeeeeeeeee -->
+
+  <!-- review section -->
+  <div class="container-xxl review-container">
+    <img src="/images/pairing_tomato-removebg-preview.png" alt="" width="100px" height="100px" id="pairing-tomato">
+    <div class="review-image-box">
+      <img src="/images/young-home-beautiful-food-cooking.jpg" alt="lady-chef">
+    </div>
+
+    <div class="review-card-box">
+      <div class="swiper Review-mySwiper">
+        <p class="text-center " style="font-size :20px; font-weight :600; color:#fc710d;">Testimonials <i
+            class="ri-restaurant-line"></i></p>
+        <p class="text-center mt-0 mb-4" style="font-size :37px; font-weight :900; color:white;">What our Clients Say
+        </p>
+
+        <div class="swiper-wrapper">
+          <!-- Card 1 -->
+          <div class="swiper-slide review-card">
+            <div class="item">
+              <div class="profile">
+                <img
+                  src="/images/larki profile.jpg"
+                  alt="">
+                <div class="information">
+                  <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p style="font-weight: bold;">Furkan Giray</p>
+                  <span>Desginer</span>
+                </div>
+              </div>
+              <p>The chicken biryani was absolutely delicious! The rice was perfectly cooked,
+                each grain separate and infused with rich spices.
+                The chicken was tender, juicy, and packed with flavor. </p>
+              <div class="icon"> <i class="fa fa-quote-right" aria-hidden="true"></i> </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="swiper-slide review-card">
+            <div class="item">
+              <div class="profile">
+                <img
+                  src="/images/boy profile.jpg"
+                  alt="">
+                <div class="information">
+                  <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p style="font-weight: bold;">Abdul Bari</p>
+                  <span>Web Developer</span>
+                </div>
+              </div>
+              <p>The chicken biryani was absolutely delicious! The rice was perfectly cooked, each grain separate and
+                infused with rich spices.
+                The chicken was tender, juicy, and packed with flavor. </p>
+              <div class="icon"> <i class="fa fa-quote-right" aria-hidden="true"></i> </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="swiper-slide review-card">
+            <div class="item">
+              <div class="profile">
+                <img
+                  src="/images/boy2 profile.jpg"
+                  alt="">
+                <div class="information">
+                  <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+
+                  </div>
+                  <p style="font-weight: bold;">John</p>
+                  <span>Web Developer</span>
+                </div>
+              </div>
+              <p>A simple yet flavorful Margherita pizza! The crust was crispy on the outside and soft on the inside,
+                with just the right amount of chewiness.
+                The tomato sauce had a fresh, tangy taste, and the mozzarella cheese was perfectly melted.</p>
+              <div class="icon"> <i class="fa fa-quote-right" aria-hidden="true"></i> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- text slider -->
+  <section class="container-xxl text-slider-container">
+    <div class="slider-wrapper">
+      <div class="slider">
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Chicken Burgur</div>
+        <div class="slide">Pizza</div>
+        <div class="slide">Biryani</div>
+        <div class="slide">Chicken Burgur</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Chicken Burgur</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Pizza</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Pizza</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Pizza</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Biryani</div>
+        <div class="slide">Chicken Burgur</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Biryani</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Biryani</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Biryani</div>
+        <div class="slide">Chicken Burgur</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Biryani</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Biryani</div>
+        <div class="slide">Chicken Burgur</div>
+        <div class="slide">FAST FOOD</div>
+        <div class="slide">Biryani</div>
+      </div>
+    </div>
+  </section>
+  <!-- review section  close -->
+
+  <!-- meet our chef -->
+  <div class="container-xxl meet-chef-container ">
+    <img src="/images/pizza-victeezy-removebg-preview.png" alt="" id="pizza-victizy">
+    <p class="text-center pt-5" style="font-size :20px; font-weight :600; color:#fc710d;text-transform: uppercase;">
+      Our Chefe <i class="ri-restaurant-line"></i></p>
+    <p class="text-center fs-2 fw-bold p-0" style="font-weight:900;font-size: 40px;">Meet Our Expert Chefe</p>
+
+    <div class="chefs-container">
+      <div class="chef-wrapper-container">
+        <div class="chefe-card">
+          <img
+            src="/images/larki-chefe.jpg"
+            alt="Chef 1">
+          <h3>Chef Ayesha</h3>
+          <p>Expert in Italian Cuisine</p>
+        </div>
+        <div class="chefe-card">
+          <img src="/images/boy-chefe.jpg"
+            alt="Chef 2">
+          <h3>Chef Ahmed</h3>
+          <p>Master of French Pastries</p>
+        </div>
+        <div class="chefe-card">
+          <img src="/images/boy-chef2.jpg"
+            alt="Chef 3">
+          <h3>Chef Ali</h3>
+          <p>Specialist in Japanese Sushi</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- meet our chef close  -->
+
+  <!-- images slider //////////-->
+  <div class=" container-xxl food-images-container">
+    <div class="swiper food-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide food-swiper-slide"><img
+            src="/images/boti.webp"
+            alt="Food Image 1"></div>
+        <div class="swiper-slide food-swiper-slide"><img
+            src="/images/lazanya.jpg"
+            alt="Food Image 2"></div>
+        <div class="swiper-slide food-swiper-slide"><img
+            src="/images/juice.jpg"
+            alt="Food Image 3"></div>
+        <div class="swiper-slide food-swiper-slide"><img
+            src="/images/chips-burgur.jpg"
+            alt="Food Image 4"></div>
+        <div class="swiper-slide food-swiper-slide"><img
+            src="/images/pizzaa.jpg"
+            alt="Food Image 5"></div>
+        <div class="swiper-slide food-swiper-slide"><img
+            src="/images/chicken kabab grilled.jpg"
+            alt="Food Image 6"></div>
+        <div class="swiper-slide food-swiper-slide"><img
+            src="/images/annda prattha.jpg"
+            alt="Food Image 7"></div>
+      </div>
+    </div>
+  </div>
+  <!-- images slider close  //////////-->
+ 
+
+
+
+
+
+
+
+
+
+
+
+  <!-- footer ////  -->
+  <div class="container-xxl footer">
+    <div class="d-flex justify-content-around pt-5 orange-info-box">
+      <div class="location-box">
+        <i class="ri-map-pin-2-fill"></i>
+        <h6 style="color: white;padding-top: 15px;">
+          address <br>
+          4648 Rocky Road Philadelphia</h6>
+      </div>
+      <div class="email-box">
+        <i class="ri-mail-fill"></i>
+        <h6 style="color: white;padding-top: 15px;">
+          send email <br>
+          info@exmple.com
+        </h6>
+      </div>
+      <div class="phone-box">
+        <i class="ri-phone-fill"></i>
+        <h6 style="color: white; padding-top: 15px;">
+          call emergency <br>
+          +88 0123 654 99
+        </h6>
+      </div>
+    </div>
+
+
+    <!-- Footer Content -->
+    <div class="custom-footer-container">
+      <div class="custom-footer-section about">
+        <h3>About Us</h3>
+        <p>We provide high-quality services to enhance your experience. Stay connected with us!</p>
+        <div class="custom-footer-section social">
+          <div class="custom-social-icons">
+            <a href="#" class="social-icon facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="#" class="social-icon twitter"><i class="ri-twitter-fill"></i></a>
+            <a href="#" class="social-icon instagram"><i class="ri-instagram-fill"></i></a>
+            <a href="#" class="social-icon linkedin"><i class="ri-linkedin-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-footer-section quick-links">
+        <h3>Quick Links</h3>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Blog</a>
+      </div>
+
+      <div class="custom-footer-section menu">
+        <h3>Our Menu</h3>
+        <a href="#">Breakfast</a>
+        <a href="#">Lunch</a>
+        <a href="#">Dinner</a>
+        <a href="#">Desserts</a>
+      </div>
+
+      <div class="custom-footer-section contact">
+        <h3>Contact Us</h3>
+        <p>Email: contact@yourcompany.com</p>
+        <p>Phone: +123 456 7890</p>
+        <p>Location: 123 Street, City</p>
+      </div>
+    </div>
+    <!-- Back to Top Button -->
+    <div class="container-xxl">
+      <button id="customBackToTop"><i class="ri-arrow-up-line"></i></button>
+    </div>
+  </div>
+  </div>
+  <div class="custom-footer-bottom container-xxl">
+    &copy; 2025 YourCompany. All Rights Reserved.
+  </div>
+  <!-- footer closee////  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- main web container close -->
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!--swiper cdn  -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- gsap cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- gsap scrolltrigger cdn-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./asset/javaScript/Libraries.js"></script>
+ 
+
+  <!-- firebase connect -->
+  <!-- ye mere firebase se related hen (Anisa) -->
+  <script src="./asset/javaScript/app.js"type="module"></script>
+  <script src="/asset/javaScript/firebase.configure.js"type="module"></script>
+  <!-- ye mere firebase se related hen (Anisa) closeee -->
+
+
+  <!-- ye form kelie he jo hr page me hoga  -->
+  <script src="/asset/javaScript/form.js"type="module"></script>
+</body>
+
+</html>

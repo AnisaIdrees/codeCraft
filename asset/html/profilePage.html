@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            background-color: #fc791a;
+            color: white;
+            width: 250px;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            margin: 5px 0;
+        }
+
+        .sidebar a:hover {
+            background-color: #fc791a;
+            border-radius: 4px;
+        }
+
+        .sidebar .active {
+            background-color: white;
+            border-radius: 4px;
+            color: black
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: none;
+            border-radius: 10px;
+        }
+
+        #myRecipes {
+            background: none;
+            border: none;
+            padding-left: 20px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        .dropbtn {
+            background-color: #fc791a;
+            color: white;
+            padding: 5pxpx;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #fc791a;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #fc791a;
+        }
+        .cursor,
+.cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor {
+    width: 12px;
+    height: 12px;
+    background: #fa6901;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
+
+.cursor-trail {
+    width: 30px;
+    height: 30px;
+    background:  #fa6901;
+    border-radius: 50%;
+    filter: blur(8px);
+}
+    </style>
+</head>
+
+<body style="font-family: serif;">
+  <!-- cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-trail"></div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <h4 class="text-center">User Dashboard</h4>
+        <a href="/index.html" class="active">Home</a>
+        <button id="myRecipes">My Recipes</button>
+        <a href="/asset/html/wishList.html">My Wish List</a>
+        <a href="/asset/html/recipe.html">Recipes</a>
+        <a href="./settings.html">Settings</a>
+        <a href="#" id="logOut">Logout</a>
+    </div>
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded mb-4">
+            <div class="container-fluid">
+                <span class="navbar-brand">Welcome to Food Recipe!</span>
+                <a style="text-decoration: none;
+                color: white;
+                background:  #fc791a;width: 140px;height: 48px;text-align: center;padding-top: 10px;" href="#" data-bs-toggle="modal" data-bs-target="#modal">
+                    <i class="fa-solid fa-plus"></i>
+                    <p>Create Recipe</p>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Overview Cards -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card p-3 text-center">
+                    <h4>Profile Views</h4>
+                    <h2>1,234</h2>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card p-3 text-center">
+                    <h4>Messages</h4>
+                    <h2>56</h2>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card p-3 text-center">
+                    <h4>Notifications</h4>
+                    <h2>8</h2>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3">
+            <h4>Recent Activity</h4>
+            <ul>
+                <li>Logged in from new device.</li>
+                <li>Updated profile picture.</li>
+                <li>Changed password.</li>
+                <li>Checked notifications.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Recipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="recipeForm">
+                        <div class="mb-3">
+                            <label for="imageUpload" class="form-label">Recipe Image</label>
+                            <input class="form-control" type="file" id="imageUpload" accept="image/*" required>
+                            <img id="uploadedImagePreview" style="display:none; width: 200px; height: auto; margin-top: 10px; border-radius: 10px;" alt="Recipe Image">
+                        </div>
+                        
+                        
+                        <div class="mb-3">
+                            <label for="recipeName" class="form-label">Recipe Name</label>
+                            <input type="text" class="form-control" id="recipeName" placeholder="Enter recipe name"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Category</label>
+                            <select class="form-select" id="category" required>
+                                <option value="">Select Category</option>
+                                <option value="Salad">Salad</option>
+                                <option value="Starter">Starter</option>
+                                <option value="lunch">lunch</option>
+                                <option value="Smoothies">Smoothies</option>
+                                <option value="Pizza">Pizza</option>
+                                <option value="Dinner">Dinner</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ingredients" class="form-label">Ingredients</label>
+                            <textarea class="form-control" id="ingredients" rows="3" placeholder="Enter ingredients"
+                                required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="instructions" class="form-label">Instructions</label>
+                            <textarea class="form-control" id="instructions" rows="4"
+                                placeholder="Enter cooking instructions" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nutritions" class="form-label">Nutritions:</label>
+                            <textarea id="nutritions" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cooking_method" class="form-label">Cooking Method:</label>
+                            <textarea id="cooking_method" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cuisine" class="form-label">Cusine:</label>
+                            <textarea id="cuisine" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="servings" class="form-label">Servings:</label>
+                            <textarea id="servings" class="form-control" rows="3"></textarea>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="recipeUploadBtn" type="button" class="btn btn-primary">Upload Recipe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('logOut').addEventListener('click', function () {
+            alert('Logging out...');
+            window.location.href = 'logIn.html';
+        });
+    </script>
+    <script>
+        // Trigger Modal on Create Recipe Click
+        document.querySelector('[data-bs-toggle="modal"]').addEventListener('click', function (event) {
+            event.preventDefault();
+            var myModal = new bootstrap.Modal(document.getElementById('modal'));
+            myModal.show();
+        });
+    </script>
+
+  <!-- gsap cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- gsap scrolltrigger cdn-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/asset/javaScript/Libraries.js"></script>
+
+    <script type="module" src="/asset/javaScript/profile.js"></script>
+    <script type="module" src="/asset/javaScript/cloudinar.js"></script>
+    <script src="/asset/javaScript/form.js" type="module"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salad</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../style/salad.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    .slider-banner {
+      width: 100%;
+      height: 88vh;
+      overflow: hidden !important;
+
+    }
+
+    /* Hero Section */
+    .about-hero {
+      position: relative;
+      height: 420px;
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+      background-image: url('https://www.shutterstock.com/image-photo/autumn-fall-baking-food-background-260nw-2023889963.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .about-hero-content h1 {
+      cursor: pointer;
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.5s ease-in-out forwards;
+    }
+
+    .about-hero-content p {
+      cursor: pointer;
+      color: #ddd;
+      font-size: 18px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.5s ease-in-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    /* Keyframes for  upward motion */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+
+    #tranding {
+      padding: 4rem 0;
+    }
+
+    @media (max-width:1440px) {
+      #tranding {
+        padding: 7rem 0;
+      }
+    }
+
+    #tranding .tranding-slider {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      height: 52rem;
+      padding: 2rem 0;
+      z-index: 10;
+      position: relative;
+    }
+
+    @media (max-width:500px) {
+      #tranding .tranding-slider {
+        height: 45rem;
+      }
+    }
+
+    .tranding-slide {
+      width: 25rem;
+      height: 26rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width:500px) {
+      .tranding-slide {
+        width: 18rem !important;
+        height: 24rem !important;
+      }
+
+      .tranding-slide .tranding-slide-img img {
+        width: 18rem !important;
+        height: 24rem !important;
+      }
+    }
+
+    .tranding-slide .tranding-slide-img img {
+
+      width: 25rem;
+      height: 26rem;
+      border-radius: 3em;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .tranding-slide:hover {
+      transform: scale(1.1) !important;
+    }
+
+    .tranding-slide .tranding-slide-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 1;
+      transition: none;
+    }
+
+    .tranding-slide .tranding-slide-content {
+      opacity: 1 !important;
+      border-radius: 8% !important;
+      border: 5px solid black !important;
+      cursor: pointer !important;
+    }
+
+    .tranding-slide-content .hover-text {
+      text-align: center;
+      color: #ffffff;
+    }
+
+
+    .tranding-slide-content .food-price {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      color: #ffffff;
+    }
+
+    .tranding-slide-content {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      color: white;
+      font-size: 15px;
+    }
+
+    .food-rating {
+      padding-top: 1em;
+      display: flex;
+      gap: 1em;
+    }
+
+    .food-rating span {
+      color: #fc791a;
+      font-size: 20px;
+      font-weight: bolder;
+      font-style: italic;
+    }
+
+
+    .swiper-slide-shadow-left,
+    .swiper-slide-shadow-right {
+      display: none;
+    }
+
+    .tranding-slider-control {
+      position: relative;
+      bottom: 18rem;
+      left: 50%;
+      transform: translate(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiper-container {
+      padding: 0 !important;
+    }
+
+    .tranding-slider-control .swiper-button-next {
+      left: 58% !important;
+      transform: translateX(-58%) !important;
+    }
+
+    @media (max-width:990px) {
+      .tranding-slider-control .swiper-button-next {
+        left: 70% !important;
+        transform: translateX(-70%) !important;
+      }
+    }
+
+    @media (max-width:450px) {
+      .tranding-slider-control .swiper-button-next {
+        left: 80% !important;
+        transform: translateX(-80%) !important;
+      }
+    }
+
+    @media (max-width:990px) {
+      .tranding-slider-control .swiper-button-prev {
+        left: 30% !important;
+        transform: translateX(-30%) !important;
+      }
+    }
+
+    @media (max-width:450px) {
+      .tranding-slider-control .swiper-button-prev {
+        left: 20% !important;
+        transform: translateX(-20%) !important;
+      }
+    }
+
+
+    .tranding-slider-control .slider-arrow {
+      background: #ffffff;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      left: 42%;
+      transform: translateX(-42%);
+      filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+    }
+
+    .tranding-slider-control .slider-arrow ion-icon {
+      font-size: 2rem;
+      color: #222224;
+    }
+
+    .tranding-slider-control .slider-arrow::after {
+      content: '';
+    }
+
+    .tranding-slider-control .swiper-pagination {
+      position: relative;
+      width: 15rem;
+      bottom: 1rem;
+    }
+
+    .tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+      filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+    }
+
+    .tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+      background-color: #eb0029;
+    }
+
+    @media (max-width: 1400px) {
+      .container-xxl {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    .cuisine-section {
+      text-align: center;
+      padding: 30px 20px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    .cuisine-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 1005px;
+      text-transform: uppercase;
+    }
+
+    .cuisine-image {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .cuisine-image:hover {
+      transform: scale(1.1);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* Card Styling */
+    .newCusineCard {
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      text-align: center;
+      padding: 15px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card-body {
+      padding: 10px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .cursor,
+.cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor {
+    width: 12px;
+    height: 12px;
+    background: #fa6901;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
+
+.cursor-trail {
+    width: 30px;
+    height: 30px;
+    background:  #fa6901;
+    border-radius: 50%;
+    filter: blur(8px);
+}
+  </style>
+</head>
+
+<body>
+  <!-- cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-trail"></div>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="/images/food_logo-removebg-preview.png" alt="" class="logo-img">
+      </div>
+      <nav>
+        <ul id="menuList">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/asset/html/about.html">About us</a></li>
+          <li><a href="/asset/html/blog.html">Blogs</a></li>
+          <li><a href="/asset/html/testimonial.html">Testimonials</a></li>
+          <li><a href="/asset/html/recipe.html">Recipe</a></li>
+          <li><a href="/asset/html/contact.html">Contact us</a></li>
+        </ul>
+      </nav>
+      <div class="login-sec">
+        <a  href="/asset/html/logIn.html" class="login-sign-btn"><button id="userLogin" class="login-btn">login</button></a>
+        <a href="/asset/html/profilePage.html" class="login-sign-btn"><button id="profile"  class="profile-btn">proflie</button></a>
+      </div>
+      <i class="ri-menu-3-line" id="menuIcon"></i>
+    </div>
+  </header>
+
+  <div class="container-xxl slider-banner">
+    <section class="about-hero">
+      <div class="about-hero-content">
+        <h1>Delicious Recipes.</h1>
+        <h1>Tasty Lunch Recipes</h1>
+      </div>
+    </section>
+    <!-- Slider section -->
+
+    <section id="tranding">
+      <div class="about-slider">
+        <div class="swiper tranding-slider">
+          <div class="swiper-wrapper">
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMkqTS0f51_GRIbx-4gxfgxcrMBWDWSZAphA&s"
+                  alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h3 class="food-rating">
+                    <span>Featured Recipes</span>
+                  </h3>
+                  <h2 class="food-name">
+                    Bruschetta
+                  </h2>
+
+                </div>
+              </div>
+
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img
+                  src="https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                  alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h3 class="food-rating">
+                    <span>Featured Recipes</span>
+                  </h3>
+                  <h2 class="food-name">
+                    Stuffed Bell Peppers
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh8KdJ1DA8Igl0EFigZ9hchyHeFVdbNq5c3Q&s"
+                  alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h3 class="food-rating">
+                    <span>Featured Recipes</span>
+                  </h3>
+                  <h2 class="food-name">
+                    Grilled Chicken With Mashed Potatoes
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img
+                  src="https://cdn.apartmenttherapy.info/image/upload/v1636553380/k/Photo/Recipes/2021-11-mafe/2021-11-03_ATK11087.jpg"
+                  alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h3 class="food-rating">
+                    <span>Featured Recipes</span>
+                  </h3>
+                  <h2 class="food-name">
+                    Rice with Granola
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYpq-lZnCUQvI2oNKyBUFL9Vne1Vqv8R5CKA&s"
+                  alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h3 class="food-rating">
+                    <span>Featured Recipes</span>
+                  </h3>
+                  <h2 class="food-name">
+                    Fry Lemon Herb Chilli
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://www.shanfoods.com/wp-content/uploads/2016/11/chicken-handi-main.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h3 class="food-rating">
+                    <span>Featured Recipes</span>
+                  </h3>
+                  <h2 class="food-name">
+                    Chicken Parmesan
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img
+                  src="https://i0.wp.com/urbanasian.com/wp-content/uploads/2020/11/F94C81AB-D439-473A-8221-13441ECC9B8C.jpeg?resize=640%2C459&ssl=1"
+                  alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <h3 class="food-rating">
+                    <span>Featured Recipes</span>
+                  </h3>
+                  <h2 class="food-name">
+                    Kumanio Molpa recipes
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+          </div>
+
+          <div class="tranding-slider-control">
+            <div class="swiper-button-prev slider-arrow">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div class="swiper-button-next slider-arrow">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+  <div class="container">
+    <div id="search" class="input-group w-50 m-auto mt-2">
+      <span style="background-color:  #fc791a; color: white; height: 40px;" class="input-group-text" id="basic-addon1">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </span>
+      <input style="height: 40px; font-size: 20px;" id="searchField" type="text" class="form-control"
+        placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+    </div>
+  </div>
+
+  <!-- cards -->
+  <div class="container mt-5">
+    <div class="row">
+        <div style="width:100%;" class="col-md-6">
+            <div id="salad-cards" ></div>
+        </div>
+    </div>
+</div>
+<div id="noRecipe"></div>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <script>
+
+    ///////////////////////  <!-- slider section  -->
+
+    const trandingSlider = new Swiper('.tranding-slider', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 50,
+        modifier: 2.5,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+  </script>
+  <!-- <script src="lunch.js"></script> -->
+
+  <!-- gsap cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- gsap scrolltrigger cdn-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/asset/javaScript/Libraries.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+    <script type="module" src="/asset/javaScript/salad.js"></script>
+    <script src="/asset/javaScript/form.js" type="module"></script>
+
+</body>
+
+</html>

@@ -336,237 +336,237 @@
 <!-- footer closee////  -->
 
 <script>
-  //  cursor
-const cursorPoint = document.querySelector(".cursor");
-const cursorTrail = document.querySelector(".cursor-trail");
+//   //  cursor
+// const cursorPoint = document.querySelector(".cursor");
+// const cursorTrail = document.querySelector(".cursor-trail");
 
 
 
 
-// Smooth follow effect using GSAP
-document.addEventListener("mousemove", (e) => {
-  gsap.to(cursorPoint, { x: e.clientX, y: e.clientY, duration: 0.1, ease: "power2.out" });
-  gsap.to(cursorTrail, { x: e.clientX, y: e.clientY, duration: 0.3, ease: "power3.out" });
-});
+// // Smooth follow effect using GSAP
+// document.addEventListener("mousemove", (e) => {
+//   gsap.to(cursorPoint, { x: e.clientX, y: e.clientY, duration: 0.1, ease: "power2.out" });
+//   gsap.to(cursorTrail, { x: e.clientX, y: e.clientY, duration: 0.3, ease: "power3.out" });
+// });
 
 
 
-// Click Animation
-document.addEventListener("click", () => {
-  gsap.to(cursorPoint, { scale: 1.5, duration: 0.1, ease: "power2.out", yoyo: true, repeat: 1 });
-  gsap.to(cursorTrail, { scale: 2, duration: 0.3, opacity: 0, ease: "power2.out", yoyo: true, repeat: 1 });
-});
+// // Click Animation
+// document.addEventListener("click", () => {
+//   gsap.to(cursorPoint, { scale: 1.5, duration: 0.1, ease: "power2.out", yoyo: true, repeat: 1 });
+//   gsap.to(cursorTrail, { scale: 2, duration: 0.3, opacity: 0, ease: "power2.out", yoyo: true, repeat: 1 });
+// });
 
-// gsap nav items animation
-let tl =gsap.timeline()
-tl.from('.logo img',{
-  y:-30,
-  duration:1,
-  delay:0.4,
-  opacity:0
-})
-tl.from('nav li',{
-  y:-30,
-  duration:0.5,
-  opacity:0,
-  stagger:0.3,
-})
-tl.from('.login-sec button',{
-  y:-30,
-  duration:0.6,
-  opacity:0,
-  stagger:0.2,
-})
+// // gsap nav items animation
+// let tl =gsap.timeline()
+// tl.from('.logo img',{
+//   y:-30,
+//   duration:1,
+//   delay:0.4,
+//   opacity:0
+// })
+// tl.from('nav li',{
+//   y:-30,
+//   duration:0.5,
+//   opacity:0,
+//   stagger:0.3,
+// })
+// tl.from('.login-sec button',{
+//   y:-30,
+//   duration:0.6,
+//   opacity:0,
+//   stagger:0.2,
+// })
 
 
-/////////   toggle button   /////////////
+// /////////   toggle button   /////////////
 
-const menuIcon = document.getElementById('menuIcon');
-const menuList = document.getElementById('menuList');
+// const menuIcon = document.getElementById('menuIcon');
+// const menuList = document.getElementById('menuList');
 
-menuIcon.addEventListener('click', () => {
-  if (menuList.style.maxHeight === '0px' || menuList.style.maxHeight === '') {
-    menuList.style.maxHeight = '500px'; 
-    console.log(menuIcon);
-    console.log(menuList);
+// menuIcon.addEventListener('click', () => {
+//   if (menuList.style.maxHeight === '0px' || menuList.style.maxHeight === '') {
+//     menuList.style.maxHeight = '500px'; 
+//     console.log(menuIcon);
+//     console.log(menuList);
     
     
-  } else {
-    menuList.style.maxHeight = '0px';
-  }
-});
+//   } else {
+//     menuList.style.maxHeight = '0px';
+//   }
+// });
 
-//////////////////////    Hero Section 
+// //////////////////////    Hero Section 
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Counter Animation
-  const counters = document.querySelectorAll('.about-stat-card h3');
-  counters.forEach((counter) => {
-      const target = +counter.getAttribute('data-target');
-      const speed = 200;
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Counter Animation
+//   const counters = document.querySelectorAll('.about-stat-card h3');
+//   counters.forEach((counter) => {
+//       const target = +counter.getAttribute('data-target');
+//       const speed = 200;
 
-      const updateCounter = () => {
-          const current = +counter.innerText;
-          const increment = target / speed;
+//       const updateCounter = () => {
+//           const current = +counter.innerText;
+//           const increment = target / speed;
 
-          if (current < target) {
-              counter.innerText = Math.ceil(current + increment);
-              setTimeout(updateCounter, 10);
-          } else {
-              counter.innerText = target;
-          }
-      };
+//           if (current < target) {
+//               counter.innerText = Math.ceil(current + increment);
+//               setTimeout(updateCounter, 10);
+//           } else {
+//               counter.innerText = target;
+//           }
+//       };
 
-      updateCounter();
-  });
+//       updateCounter();
+//   });
 
-  // Background Image and Text Animation
-  const images = [
-   'url("./assest/images/bg/bg1.avif")',
-  'url("./assest/images/bg/bg 2.jpg")',
-  'url("./assest/images/bg/bg 3.jpg")',
+//   // Background Image and Text Animation
+//   const images = [
+//    'url("./assest/images/bg/bg1.avif")',
+//   'url("./assest/images/bg/bg 2.jpg")',
+//   'url("./assest/images/bg/bg 3.jpg")',
 
-  'url("./assest/images/bg/bg 4.jpg")'
-];
+//   'url("./assest/images/bg/bg 4.jpg")'
+// ];
   
 
-  let currentIndex = 0;
-  const heroSection = document.querySelector('.about-hero');
+//   let currentIndex = 0;
+//   const heroSection = document.querySelector('.about-hero');
 
-  const animateText = () => {
-      const heading = document.querySelector('.about-hero-content h1');
-      const subheading = document.querySelector('.about-hero-content p');
+//   const animateText = () => {
+//       const heading = document.querySelector('.about-hero-content h1');
+//       const subheading = document.querySelector('.about-hero-content p');
 
-      heading.style.animation = 'none';
-      subheading.style.animation = 'none';
-      void heading.offsetWidth;
+//       heading.style.animation = 'none';
+//       subheading.style.animation = 'none';
+//       void heading.offsetWidth;
 
-      heading.style.animation = 'fadeInUp 1.5s ease-in-out forwards';
-      subheading.style.animation = 'fadeInUp 1.5s ease-in-out forwards';
-  };
+//       heading.style.animation = 'fadeInUp 1.5s ease-in-out forwards';
+//       subheading.style.animation = 'fadeInUp 1.5s ease-in-out forwards';
+//   };
 
-  const changeBackground = () => {
-      heroSection.style.backgroundImage = images[currentIndex];
-      animateText();
-      currentIndex = (currentIndex + 1) % images.length;
-  };
+//   const changeBackground = () => {
+//       heroSection.style.backgroundImage = images[currentIndex];
+//       animateText();
+//       currentIndex = (currentIndex + 1) % images.length;
+//   };
 
-  setInterval(changeBackground, 5000);
-  changeBackground();
-});
-
-
-
-  ////////////// Second Hero Section  
-
-// List of images
-const images = ["/images/img2.jpg",
- "/images/img3.jpg",
- "/images/bg 5.jpg",
- "/images/img4.jpg",
- "/images/img7.jpg",
- "/images/img5.jpg",
- "/images/bg 6.jpg",
-  "/images/img6.jpg"];
-let currentIndex = 0;
-
-const foodImage = document.getElementById("food-image");
-
-// Function to change image every 5 seconds
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % images.length;
-  foodImage.src = images[currentIndex];
-}, 5000);
+//   setInterval(changeBackground, 5000);
+//   changeBackground();
+// });
 
 
-///////////////////////  <!-- slider section  -->
 
-const trandingSlider = new Swiper('.tranding-slider', {
-  effect: 'coverflow',
-  grabCursor: true,
-  centeredSlides: true,
-  loop: true,
-  slidesPerView: 'auto',
-  coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 2.5,
-  },
-  pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-  },
-  navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
-});
+//   ////////////// Second Hero Section  
 
-/////////////Footer 
+// // List of images
+// const images = ["/images/img2.jpg",
+//  "/images/img3.jpg",
+//  "/images/bg 5.jpg",
+//  "/images/img4.jpg",
+//  "/images/img7.jpg",
+//  "/images/img5.jpg",
+//  "/images/bg 6.jpg",
+//   "/images/img6.jpg"];
+// let currentIndex = 0;
 
-// // back to top button
-const backToTopButton = document.getElementById("customBackToTop");
+// const foodImage = document.getElementById("food-image");
 
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
-        }
-    });
+// // Function to change image every 5 seconds
+// setInterval(() => {
+//   currentIndex = (currentIndex + 1) % images.length;
+//   foodImage.src = images[currentIndex];
+// }, 5000);
 
-    backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
 
-  // Footer Section
-document.addEventListener("DOMContentLoaded", function () {
-  gsap.registerPlugin(ScrollTrigger);
+// ///////////////////////  <!-- slider section  -->
 
-  gsap.from(".custom-footer-section", {
-      opacity: 0,
-      y: -50,
-      duration: 1,
-      stagger: 0.3,
-      ease: "power3.out",
-      scrollTrigger: {
-          trigger: ".custom-footer-container",
-          start: "top 80%",
-          toggleActions: "restart none none none"
-      }
-  });
-});
+// const trandingSlider = new Swiper('.tranding-slider', {
+//   effect: 'coverflow',
+//   grabCursor: true,
+//   centeredSlides: true,
+//   loop: true,
+//   slidesPerView: 'auto',
+//   coverflowEffect: {
+//       rotate: 0,
+//       stretch: 0,
+//       depth: 100,
+//       modifier: 2.5,
+//   },
+//   pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//   },
+//   navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//   },
+// });
 
-// Orange Info Box
-gsap.from(".orange-info-box", {
-  scrollTrigger: {
-      trigger: ".orange-info-box",
-      start: "top 80%",
-      toggleActions: "restart none none none",
-  },
-  duration: 1.5,
-  scale: 1,
-  y: 50,
-  ease: "power3.out",
-});
+// /////////////Footer 
 
-gsap.from(".orange-info-box div", {
-  scrollTrigger: {
-      trigger: ".orange-info-box",
-      start: "top 75%",
-      toggleActions: "restart none none none"
-  },
-  duration: 1.5,
-  opacity: 0,
-  y: -30,
-  stagger: 0.3,
-  ease: "power2.out",
-});  
-</script>
+// // // back to top button
+// const backToTopButton = document.getElementById("customBackToTop");
+
+//     window.addEventListener("scroll", () => {
+//         if (window.scrollY > 300) {
+//             backToTopButton.style.display = "block";
+//         } else {
+//             backToTopButton.style.display = "none";
+//         }
+//     });
+
+//     backToTopButton.addEventListener("click", () => {
+//         window.scrollTo({
+//             top: 0,
+//             behavior: "smooth"
+//         });
+//     });
+
+//   // Footer Section
+// document.addEventListener("DOMContentLoaded", function () {
+//   gsap.registerPlugin(ScrollTrigger);
+
+//   gsap.from(".custom-footer-section", {
+//       opacity: 0,
+//       y: -50,
+//       duration: 1,
+//       stagger: 0.3,
+//       ease: "power3.out",
+//       scrollTrigger: {
+//           trigger: ".custom-footer-container",
+//           start: "top 80%",
+//           toggleActions: "restart none none none"
+//       }
+//   });
+// });
+
+// // Orange Info Box
+// gsap.from(".orange-info-box", {
+//   scrollTrigger: {
+//       trigger: ".orange-info-box",
+//       start: "top 80%",
+//       toggleActions: "restart none none none",
+//   },
+//   duration: 1.5,
+//   scale: 1,
+//   y: 50,
+//   ease: "power3.out",
+// });
+
+// gsap.from(".orange-info-box div", {
+//   scrollTrigger: {
+//       trigger: ".orange-info-box",
+//       start: "top 75%",
+//       toggleActions: "restart none none none"
+//   },
+//   duration: 1.5,
+//   opacity: 0,
+//   y: -30,
+//   stagger: 0.3,
+//   ease: "power2.out",
+// });  
+// </script>
 
 
 
@@ -591,11 +591,11 @@ gsap.from(".orange-info-box div", {
   integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="/codeCraft/javaScript/Libraries.js"></script>
+<script src="/asset/javaScript/Libraries.js"></script>
 <!-- Coustom JS File -->
-    <!-- <script src="/codeCraft/asset/html/javaScript/about.js"></script> -->
+    <script src="/asset/html/javaScript/about.js"></script>
 
-    <script src="/codeCraft/javaScript/form.js" type="module"></script>
+    <script src="/asset/javaScript/form.js" type="module"></script>
 </body>
 
 </html>

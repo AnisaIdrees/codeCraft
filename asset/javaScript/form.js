@@ -164,7 +164,7 @@ onAuthStateChanged(auth, async (user) => {
         
         const auth = getAuth();
         signOut(auth).then(() => {
-          window.location.pathname = '/login.html';
+          window.location.pathname = '/asset/html/login.html';
         }).catch((error) => {
           console.error('Sign out error:', error);
         });

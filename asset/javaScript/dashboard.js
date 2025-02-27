@@ -208,7 +208,7 @@ document.getElementById("signOut")?.addEventListener("click", async () => {
       console.log("Logout hogya!");
 
      
-      window.location.href = "/index.html";
+      window.location.href = "/codeCraft/";
     }
   } catch (error) {
     Swal.fire("Error!", "Logout nahi hua. Please try again.", "error");

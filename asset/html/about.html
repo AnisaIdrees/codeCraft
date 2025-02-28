@@ -335,130 +335,6 @@
 </div>
 <!-- footer closee////  -->
 
-<script>
- //  cursor
-const cursorPointA = document.querySelector(".cursor");
-const cursorTrailA = document.querySelector(".cursor-trail");
-
-
-
-
-// Smooth follow effect using GSAP
-document.addEventListener("mousemove", (e) => {
-  gsap.to(cursorPointA, { x: e.clientX, y: e.clientY, duration: 0.1, ease: "power2.out" });
-  gsap.to(cursorTrailA, { x: e.clientX, y: e.clientY, duration: 0.3, ease: "power3.out" });
-});
-
-
-
-// Click Animation
-document.addEventListener("click", () => {
-  gsap.to(cursorPointA, { scale: 1.5, duration: 0.1, ease: "power2.out", yoyo: true, repeat: 1 });
-  gsap.to(cursorTrailA, { scale: 2, duration: 0.3, opacity: 0, ease: "power2.out", yoyo: true, repeat: 1 });
-});
-
-// gsap nav items animation
-let tl =gsap.timeline()
-tl.from('.logo img',{
-  y:-30,
-  duration:1,
-  delay:0.4,
-  opacity:0
-})
-tl.from('nav li',{
-  y:-30,
-  duration:0.5,
-  opacity:0,
-  stagger:0.3,
-})
-tl.from('.login-sec button',{
-  y:-30,
-  duration:0.6,
-  opacity:0,
-  stagger:0.2,
-})
-
-
-/////////   toggle button   /////////////
-
-const menuIcon = document.getElementById('menuIcon');
-const menuList = document.getElementById('menuList');
-
-menuIcon.addEventListener('click', () => {
-  if (menuList.style.maxHeight === '0px' || menuList.style.maxHeight === '') {
-    menuList.style.maxHeight = '500px'; 
-    console.log(menuIcon);
-    console.log(menuList);
-    
-    
-  } else {
-    menuList.style.maxHeight = '0px';
-  }
-}); 
-/////////////Footer 
-
-// // back to top button
-const backToTopButton = document.getElementById("customBackToTop");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = "block";
-    } else {
-        backToTopButton.style.display = "none";
-    }
-});
-
-backToTopButton.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-
-// Footer Section
-document.addEventListener("DOMContentLoaded", function () {
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.from(".custom-footer-section", {
-  opacity: 0,
-  y: -50,
-  duration: 1,
-  stagger: 0.3,
-  ease: "power3.out",
-  scrollTrigger: {
-      trigger: ".custom-footer-container",
-      start: "top 80%",
-      toggleActions: "restart none none none"
-  }
-});
-});
-
-// Orange Info Box
-gsap.from(".orange-info-box", {
-scrollTrigger: {
-  trigger: ".orange-info-box",
-  start: "top 80%",
-  toggleActions: "restart none none none",
-},
-duration: 1.5,
-scale: 1,
-y: 50,
-ease: "power3.out",
-});
-
-gsap.from(".orange-info-box div", {
-scrollTrigger: {
-  trigger: ".orange-info-box",
-  start: "top 75%",
-  toggleActions: "restart none none none"
-},
-duration: 1.5,
-opacity: 0,
-y: -30,
-stagger: 0.3,
-ease: "power2.out",
-});  
-</script>
 
 
     <!-- Swiper links -->
@@ -480,7 +356,7 @@ ease: "power2.out",
   integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- <script src="/codeCraft/asset/javaScript/Libraries.js"></script> -->
+<script src="/codeCraft/asset/javaScript/Libraries.js"></script>
 <!-- Coustom JS File -->
     <script src="/codeCraft/asset/javaScript/about.js"></script>
 

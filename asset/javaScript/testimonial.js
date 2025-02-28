@@ -1,22 +1,22 @@
 //  cursor
-const cursor = document.querySelector(".cursor");
-const cursorTrail = document.querySelector(".cursor-trail");
+const cursorC = document.querySelector(".cursor");
+const cursorTrailC = document.querySelector(".cursor-trail");
 
 
 
 
 // Smooth follow effect using GSAP
 document.addEventListener("mousemove", (e) => {
-  gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1, ease: "power2.out" });
-  gsap.to(cursorTrail, { x: e.clientX, y: e.clientY, duration: 0.3, ease: "power3.out" });
+  gsap.to(cursorC, { x: e.clientX, y: e.clientY, duration: 0.1, ease: "power2.out" });
+  gsap.to(cursorTrailC, { x: e.clientX, y: e.clientY, duration: 0.3, ease: "power3.out" });
 });
 
 
 
 // Click Animation
 document.addEventListener("click", () => {
-  gsap.to(cursor, { scale: 1.5, duration: 0.1, ease: "power2.out", yoyo: true, repeat: 1 });
-  gsap.to(cursorTrail, { scale: 2, duration: 0.3, opacity: 0, ease: "power2.out", yoyo: true, repeat: 1 });
+  gsap.to(cursorC, { scale: 1.5, duration: 0.1, ease: "power2.out", yoyo: true, repeat: 1 });
+  gsap.to(cursorTrailC, { scale: 2, duration: 0.3, opacity: 0, ease: "power2.out", yoyo: true, repeat: 1 });
 });
 
 
@@ -42,8 +42,8 @@ tl.from('.login-sec button', {
 });
 
 /////////   toggle button   /////////////
-const menuIcon = document.getElementById('menuIcon');
-const menuList = document.getElementById('menuList');
+var menuIcon = document.getElementById('menuIcon');
+var menuList = document.getElementById('menuList');
 
 menuIcon.addEventListener('click', () => {
   if (menuList.style.maxHeight === '0px' || menuList.style.maxHeight === '') {

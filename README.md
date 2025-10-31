@@ -45,7 +45,7 @@ Built with performance, security, and design in mind — this project delivers b
 ## 🧑‍🍳 Screenshots
 
 ### 🏠 Home Page  
-> ![Home Page Screenshot](./assets/ss.png)
+> ![Home Page Screenshot](./images/ss.png)
 
 ### 🧑‍⚕️ Admin Panel  
 > ![Admin Panel Screenshot](./assets/admin-panel.png)
@@ -112,4 +112,4 @@ firebase deploy
 
 **Anisa Idrees**  
 Frontend Developer | Firebase Enthusiast  
-🌐 [GitHub](#) | [LinkedIn](#)
+🌐 [GitHub](github.com/AnisaIdrees) | [LinkedIn](https://www.linkedin.com/in/anisa-idrees-398173320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app )
